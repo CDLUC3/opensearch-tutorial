@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  logstash:
+    volumes:
+    - "./data/2_sample/:/logfiles/"
+    - "./logstash/logstash_alb.conf:/usr/share/logstash/pipeline/logstash.conf"

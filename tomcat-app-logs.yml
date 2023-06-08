@@ -1,0 +1,5 @@
+version: '3.9'
+services:
+  logstash:
+    volumes:
+    - "./logstash/logstash_tomcat_app_logs.conf:/usr/share/logstash/pipeline/logstash.conf"

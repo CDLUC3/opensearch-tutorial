@@ -1,0 +1,88 @@
+version: '3.9'
+
+services:
+  markdown:
+    image: mymarkdown
+    container_name: mymarkdown
+    build:
+      context: markdown
+      dockerfile: Dockerfile
+    ports:
+    - published: 8086
+      target: 4567
+    environment:
+    # export DOMAINNAME=$(domainname)
+    - MYHOSTNAME=${HOSTNAME}.${DOMAINNAME}
+    volumes:
+    - ".:/www/"
+
+  opensearch:
+    image: opensearchproject/opensearch
+    container_name: opensearch
+    environment:
+    - cluster.name=opensearch-cluster
+    - node.name=opensearch
+    - bootstrap.memory_lock=true # along with the memlock settings below, disables swapping
+    - "OPENSEARCH_JAVA_OPTS=-Xms4096m -Xmx4096m" # minimum and maximum Java heap size, recommend setting both to 50% of system RAM
+    - "discovery.type=single-node" # disables bootstrap checks that are enabled when network.host is set to a non-loopback address
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65536 # maximum number of open files for the OpenSearch user, set to at least 65536 on modern systems
+        hard: 65536
+    ports:
+    - published: 9200
+      target: 9200
+
+  opensearch-dashboards:
+    image: opensearchproject/opensearch-dashboards
+    container_name: opensearch-dashboards
+    ports:
+    - published: 8094
+      target: 5601
+    expose:
+      - "8094"
+    environment:
+      - 'OPENSEARCH_HOSTS=["https://opensearch:9200"]'
+    depends_on:
+    - opensearch
+
+  logstash:
+    image: my-docker-registry/logstash-oss:dev
+    container_name: logstash
+    build:
+      context: logstash
+      dockerfile: Dockerfile
+    ports:
+    - published: 5044
+      target: 5044
+    - published: 12201
+      target: 12201
+      protocol: udp
+    depends_on:
+    - opensearch
+
+  init:
+    image: curlimages/curl
+    container_name: init
+    volumes:
+    # "Index patterns" and dashboards are created using the opensearch-dashboards UI
+    # These are stored as "saved_objects" which can be exported using the UI.
+    # The following file contains an exported index pattern.  
+    # The following script will trigger the creation of an Index pattern by importing the saved object.
+    - "./data/export.ndjson:/tmp/export.ndjson" 
+    - "./scripts:/scripts"
+    environment:
+    # export DOMAINNAME=$(domainname)
+    - DOMAIN=${DOMAINNAME}
+    - HOSTNAME=$HOSTNAME
+    entrypoint:
+      - /bin/sh
+      - '-c'
+      - |
+       /scripts/init-opensearch.sh          
+    depends_on:
+    - opensearch
+    - opensearch-dashboards

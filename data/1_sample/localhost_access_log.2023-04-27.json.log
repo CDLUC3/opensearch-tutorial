@@ -1,0 +1,14 @@
+{"host":"172.31.49.209","logicalUserName":"-","user":"-","time":"[27/Apr/2023:14:09:48 -0700]","request":"GET /store/state/7777 HTTP/1.1","statusCode":"200","size":"944"}
+{"host":"10.10.15.17","logicalUserName":"-","user":"-","time":"[27/Apr/2023:14:10:05 -0700]","request":"GET /store/content/7777/ark%3A%2F99999%2Ffk49629991/0/system%2Fmrt-erc.txt HTTP/1.1","statusCode":"404","size":"7110"}
+{"host":"10.10.15.17","logicalUserName":"-","user":"-","time":"[27/Apr/2023:14:10:06 -0700]","request":"GET /store/hostname HTTP/1.1","statusCode":"200","size":"89"}
+{"host":"10.10.15.17","logicalUserName":"-","user":"-","time":"[27/Apr/2023:14:10:07 -0700]","request":"POST /store/update/7777/ark%3A%2F99999%2Ffk49629991 HTTP/1.1","statusCode":"200","size":"1901"}
+{"host":"10.10.15.12","logicalUserName":"-","user":"-","time":"[27/Apr/2023:14:10:43 -0700]","request":"GET /store/manifest/7777/ark%3A%2F99999%2Ffk49629991 HTTP/1.1","statusCode":"200","size":"3322"}
+{"host":"10.10.15.12","logicalUserName":"-","user":"-","time":"[27/Apr/2023:14:10:43 -0700]","request":"GET /store/content/7777/ark%3A%2F99999%2Ffk49629991/0/system%2Fmrt-owner.txt?fixity=no HTTP/1.1","statusCode":"200","size":"19"}
+{"host":"10.10.15.12","logicalUserName":"-","user":"-","time":"[27/Apr/2023:14:10:43 -0700]","request":"GET /store/content/7777/ark%3A%2F99999%2Ffk49629991/0/system%2Fmrt-owner.txt?fixity=no HTTP/1.1","statusCode":"200","size":"19"}
+{"host":"10.10.15.12","logicalUserName":"-","user":"-","time":"[27/Apr/2023:14:10:43 -0700]","request":"GET /store/content/7777/ark%3A%2F99999%2Ffk49629991/0/system%2Fmrt-membership.txt?fixity=no HTTP/1.1","statusCode":"200","size":"20"}
+{"host":"10.10.15.12","logicalUserName":"-","user":"-","time":"[27/Apr/2023:14:10:44 -0700]","request":"GET /store/content/7777/ark%3A%2F99999%2Ffk49629991/1/system%2Fmrt-erc.txt?fixity=no HTTP/1.1","statusCode":"200","size":"91"}
+{"host":"10.10.15.12","logicalUserName":"-","user":"-","time":"[27/Apr/2023:14:10:44 -0700]","request":"GET /store/content/7777/ark%3A%2F99999%2Ffk49629991/1/system%2Fmrt-ingest.txt?fixity=no HTTP/1.1","statusCode":"200","size":"1619"}
+{"host":"10.10.15.12","logicalUserName":"-","user":"-","time":"[27/Apr/2023:14:10:44 -0700]","request":"GET /store/content/7777/ark%3A%2F99999%2Ffk49629991/1/system%2Fmrt-mom.txt?fixity=no HTTP/1.1","statusCode":"200","size":"82"}
+{"host":"10.10.15.12","logicalUserName":"-","user":"-","time":"[27/Apr/2023:14:10:44 -0700]","request":"GET /store/content/7777/ark%3A%2F99999%2Ffk49629991/1/producer%2Fmrt-embargo.txt?fixity=no HTTP/1.1","statusCode":"404","size":"6812"}
+
+

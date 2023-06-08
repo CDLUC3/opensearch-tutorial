@@ -1,0 +1,30 @@
+version: '3.9'
+volumes:
+  tomcat-logs:
+services:
+  tomcat:
+    image: my-docker-registry/tomcat:dev
+    container_name: tomcat
+    build:
+      context: mytomcat
+      dockerfile: Dockerfile
+    environment:
+    - UMASK=0022
+    volumes:
+    - tomcat-logs:/usr/local/tomcat/logs/
+    ports:
+    - published: 8080
+      target: 8080
+  logstash:
+    volumes:
+    - tomcat-logs:/logfiles/
+    - "./logstash/logstash_tomcat.conf:/usr/share/logstash/pipeline/logstash.conf"
+    depends_on:
+    - tomcat
+  init:
+    entrypoint:
+    - /bin/sh
+    - '-c'
+    - |
+     /scripts/init-opensearch.sh          
+     /scripts/tomcat-requests.sh          

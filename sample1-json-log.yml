@@ -1,0 +1,6 @@
+version: '3'
+
+services:
+  logstash:
+    volumes:
+    - "./data/1_sample/:/logfiles/"
