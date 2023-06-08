@@ -10,6 +10,7 @@
 Start the Stack
 
 ```
+export DOMAINNAME=$(domainname)
 docker-compose -f docker-compose.yml -f sample1-json-log.yml -f logstash-json-filter.yml up -d --build
 echo "Open http://$(hostname).$(domainname):8086/ in your browser to view these instructions."
 ```

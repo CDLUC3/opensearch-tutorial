@@ -8,9 +8,12 @@ Experiments configuring OpenSearch to work with our common application patterns
 
 ## General Instructions
 
-Start the Docker Stack from the `/opensearch/` directory.
+These instructions presume that ports 8080-8099 are open to internet.  8086, 8094 and 8080 are used in these examples.
+
+Start the Docker Stack.
 
 ```
+export DOMAINNAME=$(domainname)
 docker-compose up -d --build
 echo "Open http://$(hostname).$(domainname):8086/" in your browser to view these instructions.
 ```

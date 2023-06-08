@@ -11,6 +11,7 @@
 Start the Stack
 
 ```
+export DOMAINNAME=$(domainname)
 docker-compose -f docker-compose.yml -f alb-json-log.yml up -d --build
 echo "Open http://$(hostname).$(domainname):8086/ in your browser to view these instructions."
 ```
