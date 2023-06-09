@@ -2,10 +2,11 @@
 
 ---
 
-# Load Sample Tomcat Application log files
+# Load Sample Rails log files
 
-- See [`tomcat-all-logs.yml`](../tomcat-all-logs.yml)
-- See [`logstash/logstash_tomcat_all_logs.conf`](../logstash/logstash_tomcat_all_logs.conf)
+## Under Construction
+
+- https://nicolasiensen.github.io/2022-02-01-creating-a-new-rails-application-with-docker/
 
 Start the Stack
 
@@ -34,4 +35,4 @@ docker-compose -f docker-compose.yml -f tomcat.yml -f tomcat-all-logs.yml down -
 ```
 
 ---
-[Rails logs](docs/rails.md)
+[Home](../README.md)

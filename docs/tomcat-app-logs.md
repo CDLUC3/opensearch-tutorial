@@ -24,7 +24,7 @@ export MYHOSTNAME=$(hostname)
 
 ```
 docker-compose -f docker-compose.yml -f tomcat.yml -f tomcat-app-logs.yml up -d --build
-echo "Open http://$${MYHOSTNAME:-$(hostname).$(domainname)}:8086/ in your browser to view these instructions."
+echo "Open http://${MYHOSTNAME:-$(hostname).$(domainname)}:8086/docs/tomcat-app-logs.md in your browser to view these instructions."
 
 ```
 
@@ -33,9 +33,12 @@ echo "Open http://$${MYHOSTNAME:-$(hostname).$(domainname)}:8086/ in your browse
   - [hello.jsp](http://{{MYHOSTNAME}}:8080/hello.jsp)
 2. Navigate to the [OpenSearch Dashboard Discover Page](http://{{MYHOSTNAME}}:8094/app/discover)
   - Credentials: `admin:admin`
+  - If prompted, choose the "Global" tenant
 
 Run the following to stop the stack.
 
 ```
 docker-compose -f docker-compose.yml -f tomcat.yml -f tomcat-app-logs.yml down --volume
 ```
+---
+[Handle 3 types of tomcat logs](tomcat-all-logs.md)

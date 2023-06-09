@@ -22,12 +22,13 @@ export MYHOSTNAME=$(hostname)
 
 ```
 docker-compose -f docker-compose.yml -f alb-s3-json-log.yml up -d --build
-echo "Open http://${MYHOSTNAME:-$(hostname).$(domainname)}:8086/ in your browser to view these instructions."
+echo "Open http://${MYHOSTNAME:-$(hostname).$(domainname)}:8086/docs/alb_s3.md in your browser to view these instructions."
 
 ```
 
 1. Navigate to the [OpenSearch Dashboard Discover Page](http://{{MYHOSTNAME}}:8094/app/discover)
   - Credentials: `admin:admin`
+  - If prompted, choose the "Global" tenant
 2. Sample search
   - `message: 200`
 
@@ -38,3 +39,6 @@ Run the following to stop the stack.
 ```
 docker-compose down
 ```
+
+---
+[Catalina Logs from running tomcat](tomcat-catalina.md)

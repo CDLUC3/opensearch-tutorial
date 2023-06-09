@@ -26,13 +26,15 @@ echo "Open http://${MYHOSTNAME:-$(hostname).$(domainname)}:8086/docs/sample1.md 
 
 1. Navigate to the [OpenSearch Dashboard Discover Page](http://{{MYHOSTNAME}}:8094/app/discover)
   - Credentials: `admin:admin`
+  - If prompted, choose the "Global" tenant
 2. Sample search
   - `message: 200`
-
-
 
 Run the following to stop the stack.
 
 ```
 docker-compose down
 ```
+
+---
+[Sample Files - Json Filter](sample1_with_json.md)

@@ -16,12 +16,13 @@ export MYHOSTNAME=$(hostname)
 
 ```
 docker-compose -f docker-compose.yml -f sample1-json-log.yml -f logstash-json-filter.yml up -d --build
-echo "Open http://$(hostname).$(domainname):8086/ in your browser to view these instructions."
+echo "Open http://${MYHOSTNAME:-$(hostname).$(domainname)}:8086/docs/sample1_with_json.md in your browser to view these instructions."
 
 ```
 
 1. Navigate to the [OpenSearch Dashboard Discover Page](http://{{MYHOSTNAME}}:8094/app/discover)
   - Credentials: `admin:admin`
+  - If prompted, choose the "Global" tenant
 2. Sample search 
   - Click `DQL` and update the data range to look at the past week
 3. Search access logs
@@ -40,3 +41,6 @@ Run the following to stop the stack.
 ```
 docker-compose down
 ```
+
+---
+[ALB Logs](alb.md)

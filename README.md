@@ -8,7 +8,13 @@ Experiments configuring OpenSearch to work with our common application patterns
 
 ## General Instructions
 
-These instructions presume that ports 8080-8099 are open to internet.  8086, 8094 and 8080 are used in these examples.
+Docker is required for this tutorial.  See our [docker tutorial](https://cdluc3.github.io/docker-tutorial/) for background.
+
+These examples should work on Linux or Mac.  Contributions are welcome to make these examples work on Windows.
+
+These instructions presume that ports 8080-8099 are open to internet.  
+
+- Ports 8086, 8094 and 8080 are used in these examples.
 
 Start the Docker Stack.
 
@@ -39,6 +45,5 @@ docker-compose down
 - [Access Logs from running tomcat](docs/tomcat-access.md)
 - [Json Application Logs from running tomcat](docs/tomcat-app-logs.md)
 - [Handle 3 types of tomcat logs](docs/tomcat-all-logs.md)
+- [Rails logs](docs/rails.md)
 
-OpenSearch and Rails
-- https://nicolasiensen.github.io/2022-02-01-creating-a-new-rails-application-with-docker/
