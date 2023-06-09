@@ -1,8 +1,19 @@
 FROM minio/minio
 
-RUN mkdir -p /buckets/bucket/test-logs/
+# https://stackoverflow.com/questions/72904999/create-minio-docker-image-with-content
+COPY --from=docker.io/minio/mc:latest /usr/bin/mc /usr/bin/mc
 
-COPY alb.log /buckets/bucket/test-logs/
+RUN mkdir -p /buckets/bucket/ /tmp/data/test-logs/
+
+COPY alb.log /tmp/data/test-logs/
+
+RUN minio server /buckets & \
+    server_pid=$!; \
+    until mc alias set local http://localhost:9000 minioadmin minioadmin; do \
+        sleep 1; \
+    done; \
+    mc cp --recursive /tmp/data/* local/bucket; \
+    kill $server_pid
 
 EXPOSE 9000 9001
 
