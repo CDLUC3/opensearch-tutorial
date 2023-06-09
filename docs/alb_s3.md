@@ -4,6 +4,10 @@
 
 # Load Sample ALB log file from s3
 
+## Purpose
+Load ALB logs from and S3-compatible cloud storage bucket.
+
+## Configuration
 - See [`alb-s3-json-log.yml`](../alb-s3-json-log.yml)
 - See [`logstash/logstash_alb.conf`](../logstash/logstash_alb_s3.conf)
 
@@ -13,7 +17,7 @@ If needed, the following command can be run to create the sample data in s3
 aws s3 cp data/2_sample/alb.log s3://uc3-s3-dev/test-logs/alb.log
 ```
 
-Start the Stack
+## Run the scenario
 
 If running locally...
 ```
@@ -25,6 +29,7 @@ If running on a server...
 export MYHOSTNAME=$(hostname).$(domainname)
 ```
 
+Start the docker stack
 ```
 docker-compose -f docker-compose.yml -f alb-s3-json-log.yml up -d --build
 echo "Open http://${MYHOSTNAME}:8086/docs/alb_s3.md in your browser to view these instructions."

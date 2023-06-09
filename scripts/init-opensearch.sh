@@ -4,7 +4,7 @@ URL=http://admin:admin@$MYHOSTNAME:8094
 echo $URL
 status_code=$(curl --write-out %{http_code} --silent --output /dev/null $URL/app/home)
 echo $status_code
-sleep 2
+sleep 10
 while [ $status_code -ne 200 ]
 do
   status_code=$(curl --write-out %{http_code} --silent --output /dev/null $URL/app/home)

@@ -4,6 +4,10 @@
 
 # Load Sample Files - No Json Filter
 
+## Purpose
+Parse and load sample json log files as files.
+
+## Configuration
 - See [`sample1-json-log.yml`](../sample1-json-log.yml)
 - See [`logstash/logstash.conf`](../logstash/logstash.conf)
 - See [`data/1_sample/ecs.json.log`](../data/1_sample/ecs.json.log)
@@ -11,13 +15,14 @@
 - See [`data/1_sample/localhost_access_log.2023-04-27.json.log`](../data/1_sample/localhost_access_log.2023-04-27.json.log)
   - tomcat access log
 
-Start the Stack
-
+## Run the scenario
+ 
 If running locally...
 ```
 export MYHOSTNAME=$(hostname)
 ```
 
+Start the docker stack
 ```
 docker-compose -f docker-compose.yml -f sample1-json-log.yml up -d --build
 echo "Open http://${MYHOSTNAME}:8086/docs/sample1.md in your browser to view these instructions."

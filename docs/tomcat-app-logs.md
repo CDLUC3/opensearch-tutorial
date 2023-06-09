@@ -4,6 +4,10 @@
 
 # Load Sample Tomcat Application log files
 
+## Purpose
+Parse Json applciation logs generated from an application running in tomcat. The application is using log4j2 to output logs in ECS format.
+
+## Configuration
 - See [`tomcat-app-logs.yml`](../tomcat-app-logs.yml)
 - See [`logstash/logstash_tomcat_app_logs.conf`](../logstash/logstash_tomcat_app_logs.conf)
 - See [`mytomcat/src/main/webapp/hello.jsp`](../mytomcat/src/main/webapp/hello.jsp)
@@ -15,7 +19,7 @@
 - See [`mytomcat/src/main/resources/log4j2.xml`](../mytomcat/src/main/resources/log4j2.xml)
   - [Log4j2 Configuration Options](https://logging.apache.org/log4j/2.x/manual/configuration.html#automatic-configuration)
 
-Start the Stack
+## Run the scenario
 
 If running locally...
 ```
@@ -27,6 +31,7 @@ If running on a server...
 export MYHOSTNAME=$(hostname).$(domainname)
 ```
 
+Start the docker stack
 ```
 docker-compose -f docker-compose.yml -f tomcat.yml -f tomcat-app-logs.yml up -d --build
 echo "Open http://${MYHOSTNAME}:8086/docs/tomcat-app-logs.md in your browser to view these instructions."

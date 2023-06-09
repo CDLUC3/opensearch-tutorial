@@ -4,10 +4,14 @@
 
 # Load Sample Tomcat Application log files
 
+## Purpose
+Use logstash to parse multiple types of logfiles generated withing Tomcat.
+
+## Configuration
 - See [`tomcat-all-logs.yml`](../tomcat-all-logs.yml)
 - See [`logstash/logstash_tomcat_all_logs.conf`](../logstash/logstash_tomcat_all_logs.conf)
 
-Start the Stack
+## Run the scenario
 
 If running locally...
 ```
@@ -19,6 +23,7 @@ If running on a server...
 export MYHOSTNAME=$(hostname).$(domainname)
 ```
 
+Start the docker stack
 ```
 docker-compose -f docker-compose.yml -f tomcat.yml -f tomcat-all-logs.yml up -d --build
 echo "Open http://${MYHOSTNAME}:8086/docs/tomcat-all-logs.md in your browser to view these instructions."

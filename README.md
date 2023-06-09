@@ -16,7 +16,9 @@ These instructions presume that ports 8080-8099 are open to internet.
 
 - Ports 8086, 8094 and 8080 are used in these examples.
 
-Start the Docker Stack.
+## Purpose
+Install the sample data files provided with OpenSearch Dashboards.  Navigate the Examples.
+## Run the scenario
 
 If running locally...
 ```
@@ -28,6 +30,7 @@ If running on a server...
 export MYHOSTNAME=$(hostname).$(domainname)
 ```
 
+Start the docker Stack.
 ```
 docker-compose up -d --build
 echo "Open http://${MYHOSTNAME}:8086/" in your browser to view these instructions.

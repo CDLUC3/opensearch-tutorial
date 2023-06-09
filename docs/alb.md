@@ -4,11 +4,15 @@
 
 # Load Sample ALB log file
 
+## Purpose
+Parse and search AWS Application Load Balancer logs using logstash
+
+## Configuration
 - See [`alb-json-log.yml`](../alb-json-log.yml)
 - See [`logstash/logstash_alb.conf`](../logstash/logstash_alb.conf)
 - See [`data/2_sample/alb.log`](../data/2_sample/alb.log)
 
-Start the Stack
+## Run the scenario
 
 If running locally...
 ```
@@ -20,6 +24,7 @@ If running on a server...
 export MYHOSTNAME=$(hostname).$(domainname)
 ```
 
+Start the docker stack
 ```
 docker-compose -f docker-compose.yml -f alb-json-log.yml up -d --build
 echo "Open http://${MYHOSTNAME}:8086/docs/alb.md in your browser to view these instructions."
