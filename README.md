@@ -12,10 +12,15 @@ These instructions presume that ports 8080-8099 are open to internet.  8086, 809
 
 Start the Docker Stack.
 
+If running locally...
 ```
-export DOMAINNAME=$(domainname)
+export MYHOSTNAME=$(hostname)
+```
+
+```
 docker-compose up -d --build
-echo "Open http://$(hostname).$(domainname):8086/" in your browser to view these instructions.
+echo "Open http://${MYHOSTNAME:-$(hostname).$(domainname)}:8086/" in your browser to view these instructions.
+
 ```
 
 Run the following to stop the stack.

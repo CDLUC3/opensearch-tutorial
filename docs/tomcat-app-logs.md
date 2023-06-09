@@ -17,10 +17,15 @@
 
 Start the Stack
 
+If running locally...
 ```
-export DOMAINNAME=$(domainname)
+export MYHOSTNAME=$(hostname)
+```
+
+```
 docker-compose -f docker-compose.yml -f tomcat.yml -f tomcat-app-logs.yml up -d --build
-echo "Open http://$(hostname).$(domainname):8086/ in your browser to view these instructions."
+echo "Open http://$${MYHOSTNAME:-$(hostname).$(domainname)}:8086/ in your browser to view these instructions."
+
 ```
 
 1. Navigate to the Tomcat Server

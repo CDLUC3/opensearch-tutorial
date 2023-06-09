@@ -1,6 +1,7 @@
 #!/bin/sh
 
-URL=http://admin:admin@$HOSTNAME.$DOMAIN:8094
+URL=http://admin:admin@$MYHOSTNAME:8094
+echo $URL
 status_code=$(curl --write-out %{http_code} --silent --output /dev/null $URL/app/home)
 echo $status_code
 sleep 2

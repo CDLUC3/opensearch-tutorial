@@ -11,8 +11,7 @@ services:
     - published: 8086
       target: 4567
     environment:
-    # export DOMAINNAME=$(domainname)
-    - MYHOSTNAME=${HOSTNAME}.${DOMAINNAME}
+    - MYHOSTNAME=${MYHOSTNAME:-$(hostname).$(domainname)}
     volumes:
     - ".:/www/"
 
@@ -75,9 +74,7 @@ services:
     - "./data/export.ndjson:/tmp/export.ndjson" 
     - "./scripts:/scripts"
     environment:
-    # export DOMAINNAME=$(domainname)
-    - DOMAIN=${DOMAINNAME}
-    - HOSTNAME=$HOSTNAME
+    - MYHOSTNAME=${MYHOSTNAME:-$(hostname).$(domainname)}
     entrypoint:
       - /bin/sh
       - '-c'
