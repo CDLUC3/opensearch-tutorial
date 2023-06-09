@@ -13,9 +13,17 @@ do
 done
 echo "allow content to be loaded before attempting to create an index pattern"
 sleep 10
-curl --silent -X POST \
-  -H "osd-xsrf: true" \
-  $URL/api/saved_objects/_import?overwrite=true \
-  --form file=@/tmp/export.ndjson
+cat > /tmp/indexpattern.json << HERE
+{
+    "attributes": {
+        "title": "ecs-*",
+        "timeFieldName": "@timestamp"
+    }
+}
+HERE
+
+IPURL="$URL/api/saved_objects/index-pattern/ecs-*"
+curl -H "osd-xsrf: true" -H "Content-Type: application/json" -H "securitytenant: Global" -d "@/tmp/indexpattern.json" $IPURL
+
 echo
 echo 'index pattern imported'
