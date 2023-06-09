@@ -34,4 +34,4 @@ docker-compose -f docker-compose.yml -f tomcat.yml -f tomcat-all-logs.yml down -
 ```
 
 ---
-[Rails logs](docs/rails.md)
+[Rails logs](rails.md)
