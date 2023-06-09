@@ -14,9 +14,14 @@ If running locally...
 export MYHOSTNAME=$(hostname)
 ```
 
+If running on a server...
+```
+export MYHOSTNAME=$(hostname).$(domainname)
+```
+
 ```
 docker-compose -f docker-compose.yml -f tomcat.yml up -d --build
-echo "Open http://${MYHOSTNAME:-$(hostname).$(domainname)}:8086/docs/tomcat-catalina.md in your browser to view these instructions."
+echo "Open http://${MYHOSTNAME}:8086/docs/tomcat-catalina.md in your browser to view these instructions."
 
 ```
 

@@ -23,9 +23,14 @@ If running locally...
 export MYHOSTNAME=$(hostname)
 ```
 
+If running on a server...
+```
+export MYHOSTNAME=$(hostname).$(domainname)
+```
+
 ```
 docker-compose up -d --build
-echo "Open http://${MYHOSTNAME:-$(hostname).$(domainname)}:8086/" in your browser to view these instructions.
+echo "Open http://${MYHOSTNAME}:8086/" in your browser to view these instructions.
 
 ```
 
