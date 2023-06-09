@@ -16,32 +16,13 @@ These instructions presume that ports 8080-8099 are open to internet.
 
 - Ports 8086, 8094 and 8080 are used in these examples.
 
-## Purpose
-Install the sample data files provided with OpenSearch Dashboards.  Navigate the Examples.
-## Run the scenario
+## Run each example of interest
+- Start the docker stack
+- Explore the configuration files
+- Explore the open search dashboard to see the results
+- Stop the docker stack
+- Continue to the next example
 
-If running locally...
-```
-export MYHOSTNAME=$(hostname)
-```
-
-If running on a server...
-```
-export MYHOSTNAME=$(hostname).$(domainname)
-```
-
-Start the docker Stack.
-```
-docker-compose up -d --build
-echo "Open http://${MYHOSTNAME}:8086/" in your browser to view these instructions.
-
-```
-
-Run the following to stop the stack.
-
-```
-docker-compose down
-```
 
 ## Demos
 - [Explore Kibana / OpenSearch Dashboards](docs/kibana.md)

@@ -29,6 +29,8 @@ docker-compose -f docker-compose.yml -f sample1-json-log.yml -f logstash-json-fi
 echo "Open http://${MYHOSTNAME}:8086/docs/sample1_with_json.md in your browser to view these instructions."
 
 ```
+## Explore the Dashboard
+
 
 1. Navigate to the [OpenSearch Dashboard Discover Page](http://{{MYHOSTNAME}}:8094/app/discover)
   - Credentials: `admin:admin`
@@ -45,6 +47,7 @@ echo "Open http://${MYHOSTNAME}:8086/docs/sample1_with_json.md in your browser t
   - `json_data.ding:dong`
       - Using log4j2, inserted as `org.apache.logging.log4j.ThreadContext.put("ding", "dong");`
 
+## Cleanup the Stack
 
 Run the following to stop the stack.
 

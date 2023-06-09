@@ -3,6 +3,27 @@
 ---
 
 # Explore Kibana
+## Purpose
+Install the sample data files provided with OpenSearch Dashboards.  Navigate the Examples.
+## Run the scenario
+
+If running locally...
+```
+export MYHOSTNAME=$(hostname)
+```
+
+If running on a server...
+```
+export MYHOSTNAME=$(hostname).$(domainname)
+```
+
+Start the docker Stack.
+```
+docker-compose up -d --build
+echo "Open http://${MYHOSTNAME}:8086/" in your browser to view these instructions.
+
+```
+## Explore the Dashboard
 
 1. Navigate to the [OpenSearch Dashboard](http://{{MYHOSTNAME}}:8094)
   - Credentials: `admin:admin`
@@ -17,6 +38,13 @@
   - search: `response: 404`
   - search: `NOT response:(404 OR 200)`
 5. Explore the Advanced Settings for the Dashboard
+
+## Cleanup the Stack
+Run the following to stop the stack.
+
+```
+docker-compose down
+```
 
 ---
 [Sample Files - No Json Filter](sample1.md)

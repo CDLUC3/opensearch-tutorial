@@ -28,12 +28,16 @@ docker-compose -f docker-compose.yml -f sample1-json-log.yml up -d --build
 echo "Open http://${MYHOSTNAME}:8086/docs/sample1.md in your browser to view these instructions."
 
 ```
+## Explore the Dashboard
+
 
 1. Navigate to the [OpenSearch Dashboard Discover Page](http://{{MYHOSTNAME}}:8094/app/discover)
   - Credentials: `admin:admin`
   - If prompted, choose the "Global" tenant
 2. Sample search
   - `message: 200`
+
+## Cleanup the Stack
 
 Run the following to stop the stack.
 
