@@ -14,16 +14,19 @@ Use logstash grok filters to parse Tomcat catalina log files.
 ## Run the scenario
 
 If running locally...
+
 ```
 export MYHOSTNAME=$(hostname)
 ```
 
 If running on a server...
+
 ```
 export MYHOSTNAME=$(hostname).$(domainname)
 ```
 
 Start the docker stack
+
 ```
 docker-compose -f docker-compose.yml -f tomcat.yml up -d --build
 echo "Open http://${MYHOSTNAME}:8086/docs/tomcat-catalina.md in your browser to view these instructions."

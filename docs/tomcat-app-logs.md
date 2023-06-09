@@ -22,16 +22,19 @@ Parse Json applciation logs generated from an application running in tomcat. The
 ## Run the scenario
 
 If running locally...
+
 ```
 export MYHOSTNAME=$(hostname)
 ```
 
 If running on a server...
+
 ```
 export MYHOSTNAME=$(hostname).$(domainname)
 ```
 
 Start the docker stack
+
 ```
 docker-compose -f docker-compose.yml -f tomcat.yml -f tomcat-app-logs.yml up -d --build
 echo "Open http://${MYHOSTNAME}:8086/docs/tomcat-app-logs.md in your browser to view these instructions."

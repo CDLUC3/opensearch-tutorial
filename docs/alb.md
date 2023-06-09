@@ -15,16 +15,19 @@ Parse and search AWS Application Load Balancer logs using logstash grok filters.
 ## Run the scenario
 
 If running locally...
+
 ```
 export MYHOSTNAME=$(hostname)
 ```
 
 If running on a server...
+
 ```
 export MYHOSTNAME=$(hostname).$(domainname)
 ```
 
 Start the docker stack
+
 ```
 docker-compose -f docker-compose.yml -f alb-json-log.yml up -d --build
 echo "Open http://${MYHOSTNAME}:8086/docs/alb.md in your browser to view these instructions."

@@ -3,21 +3,25 @@
 ---
 
 # Explore Kibana
+
 ## Purpose
 Install the sample data files provided with OpenSearch Dashboards.  Navigate the Examples.
 ## Run the scenario
 
 If running locally...
+
 ```
 export MYHOSTNAME=$(hostname)
 ```
 
 If running on a server...
+
 ```
 export MYHOSTNAME=$(hostname).$(domainname)
 ```
 
 Start the docker Stack.
+
 ```
 docker-compose up -d --build
 echo "Open http://${MYHOSTNAME}:8086/" in your browser to view these instructions.

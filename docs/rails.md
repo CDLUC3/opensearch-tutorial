@@ -16,16 +16,19 @@ Generate Ruby on Rails logs in ECS format for use in OpenSearch
 ## Run the scenario
 
 If running locally...
+
 ```
 export MYHOSTNAME=$(hostname)
 ```
 
 If running on a server...
+
 ```
 export MYHOSTNAME=$(hostname).$(domainname)
 ```
 
 Start the docker stack
+
 ```
 docker-compose -f docker-compose.yml -f tomcat.yml -f tomcat-all-logs.yml up -d --build
 echo "Open http://${MYHOSTNAME}:8086/docs/tomcat-all-logs.md in your browser to view these instructions."
