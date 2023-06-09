@@ -11,12 +11,6 @@ Load ALB logs from and S3-compatible cloud storage bucket.
 - See [`alb-s3-json-log.yml`](../alb-s3-json-log.yml)
 - See [`logstash/logstash_alb.conf`](../logstash/logstash_alb_s3.conf)
 
-If needed, the following command can be run to create the sample data in s3
-
-```
-aws s3 cp data/2_sample/alb.log s3://uc3-s3-dev/test-logs/alb.log
-```
-
 ## Run the scenario
 
 If running locally...

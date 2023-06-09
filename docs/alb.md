@@ -5,7 +5,7 @@
 # Load Sample ALB log file
 
 ## Purpose
-Parse and search AWS Application Load Balancer logs using logstash
+Parse and search AWS Application Load Balancer logs using logstash grok filters.
 
 ## Configuration
 - See [`alb-json-log.yml`](../alb-json-log.yml)

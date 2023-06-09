@@ -4,3 +4,14 @@ services:
   logstash:
     volumes:
     - "./logstash/logstash_alb_s3.conf:/usr/share/logstash/pipeline/logstash.conf"
+  minio-server:
+    container_name: minio-server
+    image: minio-server
+    build:
+      context: minio
+      dockerfile: Dockerfile
+    ports:
+    - published: 9000
+      target: 9000
+    - published: 8098
+      target: 9001
