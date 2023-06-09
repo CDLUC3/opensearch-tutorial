@@ -34,3 +34,6 @@ docker-compose down
 - [Access Logs from running tomcat](docs/tomcat-access.md)
 - [Json Application Logs from running tomcat](docs/tomcat-app-logs.md)
 - [Handle 3 types of tomcat logs](docs/tomcat-all-logs.md)
+
+OpenSearch and Rails
+- https://nicolasiensen.github.io/2022-02-01-creating-a-new-rails-application-with-docker/

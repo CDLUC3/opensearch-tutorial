@@ -65,7 +65,7 @@ services:
     - opensearch
 
   init:
-    image: curlimages/curl
+    image: curlimages/curl:8.1.0
     container_name: init
     volumes:
     # "Index patterns" and dashboards are created using the opensearch-dashboards UI
