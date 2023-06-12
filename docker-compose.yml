@@ -51,8 +51,6 @@ services:
   logstash:
     image: my-docker-registry/logstash-oss:dev
     container_name: logstash
-    environment:
-    - MYHOSTNAME=${MYHOSTNAME:-$(hostname).$(domainname)}
     build:
       context: logstash
       dockerfile: Dockerfile
