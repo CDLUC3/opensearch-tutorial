@@ -7,6 +7,16 @@
 ## Purpose
 Parse and load sample json log files as text files.
 
+## Run the scenario
+ 
+{{start}}
+
+```
+docker-compose -f docker-compose.yml -f sample1-json-log.yml up -d --build
+echo "Open http://${MYHOSTNAME}:8086/docs/sample1.md in your browser to view these instructions."
+
+```
+
 ## Configuration
 - See [`sample1-json-log.yml`](../sample1-json-log.yml)
 - See [`logstash/logstash.conf`](../logstash/logstash.conf)
@@ -15,37 +25,14 @@ Parse and load sample json log files as text files.
 - See [`data/1_sample/localhost_access_log.2023-04-27.json.log`](../data/1_sample/localhost_access_log.2023-04-27.json.log)
   - tomcat access log
 
-## Run the scenario
- 
-If running locally...
-
-```
-export MYHOSTNAME=$(hostname)
-```
-
-If running on a server...
-
-```
-export MYHOSTNAME=$(hostname).$(domainname)
-```
-
-Start the docker stack
-
-```
-docker-compose -f docker-compose.yml -f sample1-json-log.yml up -d --build
-echo "Open http://${MYHOSTNAME}:8086/docs/sample1.md in your browser to view these instructions."
-
-```
 ## Explore the Dashboard
 
 
-1. Navigate to the [OpenSearch Dashboard Discover Page](http://{{MYHOSTNAME}}:8094/app/discover)
-  - Credentials: `admin:admin`
-  - If prompted, choose the "Global" tenant
-2. Sample search
+{{dashboard}}
+- Sample search
   - `message: 200`
   - Note that the logstash ingest timestamp is currently being used
-3. Expand the search results.  Note that the contents of the message field are not individually indexed in opensearch.
+- Expand the search results.  Note that the contents of the message field are not individually indexed in opensearch.
 
 ## Cleanup the Stack
 

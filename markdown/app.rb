@@ -16,15 +16,25 @@ def render_file(f)
   end
 end
 
+def get_map
+  map = {
+    MYHOSTNAME: ENV['MYHOSTNAME']
+  }
+  [
+    'start',
+    'dashboard'
+  ].each do |t|
+    map[t] = Mustache.render(File.open("/#{t}.md").read, map)
+  end
+  map
+end
+
 def render_md(file)
   f = "/www/#{file}.md"
   if File.exist?(f)
-    map = {
-      MYHOSTNAME: ENV['MYHOSTNAME']
-    }
     renderer = Redcarpet::Render::HTML.new
     markdown = Redcarpet::Markdown.new(renderer, {tables: true, fenced_code_blocks: true})
-    data = Mustache.render(File.open(f).read, map)
+    data = Mustache.render(File.open(f).read, get_map)
     markdown.render(data)
   elsif f == '/www/README.md'
     status 404

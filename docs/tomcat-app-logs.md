@@ -7,6 +7,16 @@
 ## Purpose
 Parse Json applciation logs generated from an application running in tomcat. The application is using log4j2 to output logs in ECS format.
 
+## Run the scenario
+
+{{start}}
+
+```
+docker-compose -f docker-compose.yml -f tomcat.yml -f tomcat-app-logs.yml up -d --build
+echo "Open http://${MYHOSTNAME}:8086/docs/tomcat-app-logs.md in your browser to view these instructions."
+
+```
+
 ## Configuration
 - See [`tomcat-app-logs.yml`](../tomcat-app-logs.yml)
 - See [`logstash/logstash_tomcat_app_logs.conf`](../logstash/logstash_tomcat_app_logs.conf)
@@ -19,37 +29,14 @@ Parse Json applciation logs generated from an application running in tomcat. The
 - See [`mytomcat/src/main/resources/log4j2.xml`](../mytomcat/src/main/resources/log4j2.xml)
   - [Log4j2 Configuration Options](https://logging.apache.org/log4j/2.x/manual/configuration.html#automatic-configuration)
 
-## Run the scenario
-
-If running locally...
-
-```
-export MYHOSTNAME=$(hostname)
-```
-
-If running on a server...
-
-```
-export MYHOSTNAME=$(hostname).$(domainname)
-```
-
-Start the docker stack
-
-```
-docker-compose -f docker-compose.yml -f tomcat.yml -f tomcat-app-logs.yml up -d --build
-echo "Open http://${MYHOSTNAME}:8086/docs/tomcat-app-logs.md in your browser to view these instructions."
-
-```
 ## Explore the Dashboard
 
 
-1. Navigate to the Tomcat Server
+{{dashboard}}
+- Navigate to the Tomcat Server
   - [static page: foo.txt](http://{{MYHOSTNAME}}:8080/static/foo.txt)
   - [hello.jsp](http://{{MYHOSTNAME}}:8080/hello.jsp)
-2. Navigate to the [OpenSearch Dashboard Discover Page](http://{{MYHOSTNAME}}:8094/app/discover)
-  - Credentials: `admin:admin`
-  - If prompted, choose the "Global" tenant
-3. Add the following **Available Fields** to the display
+- Add the following **Available Fields** to the display
   - json_data.ding
   - json_data.foo
   - json_data.message

@@ -9,6 +9,7 @@ RUN bundle install --jobs 20 --retry 5
 # Adding project files
 
 COPY *.rb .
+COPY *.md .
 
 EXPOSE 4567
 CMD ["ruby", "app.rb"]
