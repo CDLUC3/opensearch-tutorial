@@ -5,7 +5,7 @@
 # Load Sample Files - No Json Filter
 
 ## Purpose
-Parse and load sample json log files as files.
+Parse and load sample json log files as text files.
 
 ## Configuration
 - See [`sample1-json-log.yml`](../sample1-json-log.yml)

@@ -36,3 +36,8 @@ These instructions presume that ports 8080-8099 are open to internet.
 - [Handle 3 types of tomcat logs](docs/tomcat-all-logs.md)
 - [Rails logs](docs/rails.md)
 
+## Future demos to enable
+- Utilize logstach *mutate* to normalize index fields
+- Utilize opensearch index configuration to improve search results
+- Implement custom dashboard visualization
+- Created "saved reports" for particularly useful opensearch queries

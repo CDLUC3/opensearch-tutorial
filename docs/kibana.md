@@ -5,7 +5,9 @@
 # Explore Kibana
 
 ## Purpose
-Install the sample data files provided with OpenSearch Dashboards.  Navigate the Examples.
+Install the sample data files provided with OpenSearch Dashboards. 
+
+Navigate the Examples that illustrate a full-featured custom dashboard configuration.
 ## Run the scenario
 
 If running locally...
