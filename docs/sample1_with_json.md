@@ -7,9 +7,12 @@
 ## Purpose
 Parse and load sample json log files as json.
 
+Notice that individual json fields are searchable in opensearch.
+
 ## Configuration
 - See [`logstash-json-filter.yml`](../logstash-json-filter.yml)
 - See [`logstash/logstash_with_filter.conf`](../logstash/logstash_with_filter.conf)
+  - Note the filter instructs opensearch to parse the logs as json files.
 
 ## Run the scenario
 
@@ -41,6 +44,7 @@ echo "Open http://${MYHOSTNAME}:8086/docs/sample1_with_json.md in your browser t
 2. Sample search 
   - Click `DQL` and update the data range to look at the past week
 3. Search access logs
+  - Note that the logstash ingest timestamp is currently being used
   - `json_data.statusCode:200`
   - `json_data.statusCode:404`
   - `json_data.statusCode:*`

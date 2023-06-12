@@ -29,7 +29,7 @@ docker-compose up -d --build
 echo "Open http://${MYHOSTNAME}:8086/" in your browser to view these instructions.
 
 ```
-## Explore the Dashboard
+## Explore the OpenSearch Dashboards
 
 1. Navigate to the [OpenSearch Dashboard](http://{{MYHOSTNAME}}:8094)
   - Credentials: `admin:admin`
@@ -39,7 +39,8 @@ echo "Open http://${MYHOSTNAME}:8086/" in your browser to view these instruction
   - Click `View Data` explore what a custom dashboard can do
 3. From the main menu or from the dashboard page, click `Discover` to view the raw json entries
   - Expand specific entries to view the data as JSON or as a table.
-4. From the Discover page, select the `...sample_data_logs` index
+4. From the Discover page, select the `...opensearch_dashboards_sample_data_logs` index
+  - verify that the date/time range for your query covers several hours
   - search: `response: 200`
   - search: `response: 404`
   - search: `NOT response:(404 OR 200)`

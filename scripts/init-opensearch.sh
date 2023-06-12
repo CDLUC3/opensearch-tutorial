@@ -12,7 +12,6 @@ do
   sleep 2
 done
 echo "allow content to be loaded before attempting to create an index pattern"
-sleep 10
 cat > /tmp/indexpattern.json << HERE
 {
     "attributes": {
@@ -22,8 +21,12 @@ cat > /tmp/indexpattern.json << HERE
 }
 HERE
 
-IPURL="$URL/api/saved_objects/index-pattern/ecs-*"
-curl -H "osd-xsrf: true" -H "Content-Type: application/json" -H "securitytenant: Global" -d "@/tmp/indexpattern.json" $IPURL
+for tries in 1 2 3
+do
+  sleep 5
+  IPURL="$URL/api/saved_objects/index-pattern/ecs-*"
+  curl -H "osd-xsrf: true" -H "Content-Type: application/json" -H "securitytenant: Global" -d "@/tmp/indexpattern.json" $IPURL
 
-echo
-echo 'index pattern imported'
+  echo
+  echo 'index pattern imported'
+done

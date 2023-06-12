@@ -8,7 +8,8 @@ set :port, 4567
 
 def render_file(f)
   if File.exist?(f)
-    send_file f
+    content_type 'text/plain'
+    send_file f, disposition: :inline
   else
     response.headers['Location'] = '/'
     status 303

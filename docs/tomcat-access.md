@@ -41,6 +41,9 @@ echo "Open http://${MYHOSTNAME}:8086/docs/tomcat-access.md in your browser to vi
 2. Navigate to the [OpenSearch Dashboard Discover Page](http://{{MYHOSTNAME}}:8094/app/discover)
   - Credentials: `admin:admin`
   - If prompted, choose the "Global" tenant
+3. Add the following **Available Fields** to the display
+  - path
+  - response
 
 ## Cleanup the Stack
 

@@ -44,6 +44,8 @@ echo "Open http://${MYHOSTNAME}:8086/docs/sample1.md in your browser to view the
   - If prompted, choose the "Global" tenant
 2. Sample search
   - `message: 200`
+  - Note that the logstash ingest timestamp is currently being used
+3. Expand the search results.  Note that the contents of the message field are not individually indexed in opensearch.
 
 ## Cleanup the Stack
 

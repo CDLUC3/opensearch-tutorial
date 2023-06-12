@@ -7,6 +7,11 @@
 ## Purpose
 Load ALB logs from and S3-compatible cloud storage bucket.
 
+A minio container will be created to serve up these files.
+
+- See [minio/Dockerfile](../minio/Dockerfile)
+- [Test Data](../minio/alb.log)
+
 ## Configuration
 - See [`alb-s3-json-log.yml`](../alb-s3-json-log.yml)
 - See [`logstash/logstash_alb.conf`](../logstash/logstash_alb_s3.conf)
@@ -39,7 +44,8 @@ echo "Open http://${MYHOSTNAME}:8086/docs/alb_s3.md in your browser to view thes
   - Credentials: `admin:admin`
   - If prompted, choose the "Global" tenant
 2. Sample search
-  - `message: 200`
+  - `clientip: 10.10.11.218`
+  - Note that the logstash ingest timestamp is currently being used
 
 
 ## Cleanup the Stack

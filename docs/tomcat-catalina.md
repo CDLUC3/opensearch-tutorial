@@ -10,6 +10,7 @@ Use logstash grok filters to parse Tomcat catalina log files.
 ## Configuration
 - See [`tomcat.yml`](../tomcat.yml)
 - See [`logstash/logstash_tomcat.conf`](../logstash/logstash_tomcat.conf)
+- Retrieval reqeusts [scripts/tomcat-requests.sh](../scripts/tomcat-requests.sh) that will trigger tomcat log messages
 
 ## Run the scenario
 
@@ -38,7 +39,7 @@ echo "Open http://${MYHOSTNAME}:8086/docs/tomcat-catalina.md in your browser to 
 1. Navigate to the [OpenSearch Dashboard Discover Page](http://{{MYHOSTNAME}}:8094/app/discover)
   - Credentials: `admin:admin`
   - If prompted, choose the "Global" tenant
-2. Add the following fields to the display
+2. Add the following **Available Fields** to the display
   - timestamp
   - level
   - thread

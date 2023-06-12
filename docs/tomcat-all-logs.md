@@ -41,6 +41,13 @@ echo "Open http://${MYHOSTNAME}:8086/docs/tomcat-all-logs.md in your browser to 
 2. Navigate to the [OpenSearch Dashboard Discover Page](http://{{MYHOSTNAME}}:8094/app/discover)
   - Credentials: `admin:admin`
   - If prompted, choose the "Global" tenant
+3. Add the following **Available Fields** to the display
+  - type
+  - request_path
+  - json_data.ding
+  - json_data.foo
+  - json_data.message
+  - messageText
 
 ## Cleanup the Stack
 
