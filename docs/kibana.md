@@ -1,3 +1,5 @@
+{% assign start = 'zzzzzzzz' %}
+
 {{home}}
 # Explore Kibana
 
@@ -8,7 +10,6 @@ Navigate the Examples that illustrate a full-featured custom dashboard configura
 ## Run the scenario
 
 {{start}}
-{{site.start}}
 
 ```
 docker-compose up -d --build
