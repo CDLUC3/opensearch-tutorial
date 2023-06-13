@@ -34,6 +34,7 @@ These instructions presume that ports 8080-8099 are open to internet.
 - [Explore Kibana / OpenSearch Dashboards](docs/kibana.md)
 - [Sample Files - No Json Filter](docs/sample1.md)
 - [Sample Files - Json Filter](docs/sample1_with_json.md)
+- [Sample Files - Date Normalization](docs/sample1_with_json_datenorm.md)
 - [ALB Logs](docs/alb.md)
 - [ALB Logs from S3](docs/alb_s3.md)
 - [Catalina Logs from running tomcat](docs/tomcat-catalina.md)

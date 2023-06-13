@@ -46,4 +46,4 @@ docker-compose -f docker-compose.yml -f sample1-json-log.yml -f logstash-json-fi
 ```
 
 ---
-[ALB Logs](alb.md)
+[Sample Files - Date Normalization](sample1_with_json_datenorm.md)
