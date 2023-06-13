@@ -1,6 +1,5 @@
-{% assign start = 'zzzzzzzz' %}
-
 {{home}}
+
 # Explore Kibana
 
 ## Purpose
