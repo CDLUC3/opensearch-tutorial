@@ -1,4 +1,4 @@
-{% include "markdown/home.md" %}
+{% include markdown/home.md %}
 {{home}}
 
 # Explore Kibana
@@ -9,7 +9,7 @@ Install the sample data files provided with OpenSearch Dashboards.
 Navigate the Examples that illustrate a full-featured custom dashboard configuration.
 ## Run the scenario
 
-{% include "markdown/start.md" %}
+{% include markdown/start.md %}
 {{start}}
 
 ```
