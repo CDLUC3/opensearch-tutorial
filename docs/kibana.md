@@ -1,3 +1,4 @@
+{% assign start = site.start %}
 {{home}}
 
 # Explore Kibana
