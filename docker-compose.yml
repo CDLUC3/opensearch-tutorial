@@ -68,8 +68,6 @@ services:
     container_name: init
     volumes:
     - "./scripts:/scripts"
-    environment:
-    - MYHOSTNAME=${MYHOSTNAME:-$(hostname).$(domainname)}
     entrypoint:
       - /bin/sh
       - '-c'

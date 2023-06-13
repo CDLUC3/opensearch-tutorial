@@ -31,7 +31,8 @@ echo "Open http://${MYHOSTNAME}:8086/" in your browser to view these instruction
 - Explore the Advanced Settings for the Dashboard
 
 ## Cleanup the Stack
-Run the following to stop the stack.
+
+{{stop}}
 
 ```
 docker-compose down

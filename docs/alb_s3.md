@@ -34,7 +34,7 @@ echo "Open http://${MYHOSTNAME}:8086/docs/alb_s3.md in your browser to view thes
 
 ## Cleanup the Stack
 
-Run the following to stop the stack.
+{{stop}}
 
 ```
 docker-compose -f docker-compose.yml -f alb-s3-json-log.yml down

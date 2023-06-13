@@ -1,6 +1,6 @@
 #!/bin/sh
 
-URL=http://admin:admin@$MYHOSTNAME:8094
+URL=http://admin:admin@opensearch-dashboards:5601
 echo $URL
 status_code=$(curl --write-out %{http_code} --silent --output /dev/null $URL/app/home)
 echo $status_code

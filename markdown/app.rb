@@ -23,7 +23,8 @@ def get_map
   [
     'start',
     'dashboard',
-    'home'
+    'home',
+    'stop'
   ].each do |t|
     map[t] = Mustache.render(File.open("/#{t}.md").read, map)
   end

@@ -33,10 +33,10 @@ echo "Open http://${MYHOSTNAME}:8086/docs/sample1.md in your browser to view the
 
 ## Cleanup the Stack
 
-Run the following to stop the stack.
+{{stop}}
 
 ```
-docker-compose down
+docker-compose -f docker-compose.yml -f sample1-json-log.yml down
 ```
 
 ---

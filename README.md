@@ -5,7 +5,8 @@ Experiments configuring OpenSearch to work with our common application patterns.
 OpenSearch is an open search fork of the [elk stack](https://aws.amazon.com/what-is/elk-stack/#:~:text=The%20ELK%20stack%20is%20an,Elasticsearch%2C%20Logstash%2C%20and%20Kibana.) which consists of Elastic Search, Logstash and Kibana.  *OpenSeach Dashboards*
 is the open source fork of Kibana.  
 
-## NOTE: _This site is intended to be rendered in a docker container.  Some markdown links will only work when viewed from a container._
+## NOTE
+_This other pages on this site are intended to be rendered in a docker container.  Some markdown links will only work when viewed from a container. The instructions will describe how to launch that container._
 
 ## References
 - [Learning the Elastic Stack](https://www.linkedin.com/learning/learning-the-elastic-stack-2?u=76816210)

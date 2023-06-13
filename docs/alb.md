@@ -32,10 +32,10 @@ echo "Open http://${MYHOSTNAME}:8086/docs/alb.md in your browser to view these i
 
 ## Cleanup the Stack
 
-Run the following to stop the stack.
+{{stop}}
 
 ```
-docker-compose down
+docker-compose -f docker-compose.yml -f alb-json-log.yml down
 ```
 
 ---

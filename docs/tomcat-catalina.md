@@ -33,8 +33,7 @@ echo "Open http://${MYHOSTNAME}:8086/docs/tomcat-catalina.md in your browser to 
 
 ## Cleanup the Stack
 
-
-Run the following to stop the stack.
+{{stop}}
 
 ```
 docker-compose -f docker-compose.yml -f tomcat.yml down --volume

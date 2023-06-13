@@ -41,7 +41,7 @@ echo "Open http://${MYHOSTNAME}:8086/docs/tomcat-app-logs.md in your browser to 
 
 ## Cleanup the Stack
 
-Run the following to stop the stack.
+{{stop}}
 
 ```
 docker-compose -f docker-compose.yml -f tomcat.yml -f tomcat-app-logs.yml down --volume

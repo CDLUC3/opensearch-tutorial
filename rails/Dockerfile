@@ -8,7 +8,13 @@ RUN gem install rails && \
     bundle add logstash-event && \
     bundle install
 
+RUN echo "Rails.application.configure do" >> config/environments/development.rb && \
+    echo "  config.hosts.clear" >> config/environments/development.rb && \
+    echo "end" >> config/environments/development.rb 
+
 COPY lograge.rb config/initializers/
+COPY routes.rb config/
+COPY app app/
 
 EXPOSE 3000
 
