@@ -1,4 +1,4 @@
-{{home}} 1a
+{{home}}
 
 # Explore Kibana
 
