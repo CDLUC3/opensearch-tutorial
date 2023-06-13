@@ -8,7 +8,7 @@ Install the sample data files provided with OpenSearch Dashboards.
 Navigate the Examples that illustrate a full-featured custom dashboard configuration.
 ## Run the scenario
 
-{{start}}
+{{ start }}
 
 ```
 docker-compose up -d --build
