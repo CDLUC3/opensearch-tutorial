@@ -1,7 +1,4 @@
-[Home](../README.md)
-
----
-
+{{home}}
 # Load Sample Files - No Json Filter
 
 ## Purpose

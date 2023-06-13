@@ -22,7 +22,8 @@ def get_map
   }
   [
     'start',
-    'dashboard'
+    'dashboard',
+    'home'
   ].each do |t|
     map[t] = Mustache.render(File.open("/#{t}.md").read, map)
   end
@@ -35,7 +36,8 @@ def render_md(file)
     renderer = Redcarpet::Render::HTML.new
     markdown = Redcarpet::Markdown.new(renderer, {tables: true, fenced_code_blocks: true})
     data = Mustache.render(File.open(f).read, get_map)
-    markdown.render(data)
+    css = File.open("/home.css").read
+    "#{markdown.render(data)}#{css}"
   elsif f == '/www/README.md'
     status 404
   else

@@ -1,6 +1,4 @@
-[Home](../README.md)
-
----
+{{home}}
 
 # Load Sample ALB log file
 

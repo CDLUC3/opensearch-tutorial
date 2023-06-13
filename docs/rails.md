@@ -1,7 +1,4 @@
-[Home](../README.md)
-
----
-
+{{home}}
 # Load Sample Rails log files
 
 ## Under Construction

@@ -1,7 +1,4 @@
-[Home](../README.md)
-
----
-
+{{home}}
 # Load Sample Tomcat Access log file
 
 ## Purpose

@@ -1,7 +1,4 @@
-[Home](../README.md)
-
----
-
+{{home}}
 # Explore Kibana
 
 ## Purpose
