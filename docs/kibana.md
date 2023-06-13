@@ -1,4 +1,4 @@
-{% assign start = site.start %}
+{% include "markdown/home.md" %}
 {{home}}
 
 # Explore Kibana
@@ -9,7 +9,8 @@ Install the sample data files provided with OpenSearch Dashboards.
 Navigate the Examples that illustrate a full-featured custom dashboard configuration.
 ## Run the scenario
 
-{{ start }}
+{% include "markdown/start.md" %}
+{{start}}
 
 ```
 docker-compose up -d --build
