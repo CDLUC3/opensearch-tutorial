@@ -25,6 +25,7 @@ echo "Open http://${MYHOSTNAME}:8086/docs/alb.md in your browser to view these i
 
 
 {{dashboard}}
+- Set the date range to go back to April 2023 to include all records parsed with their original timestamp.
 - Sample search
   - clientip:	10.10.11.218`
   - Note that the logstash ingest timestamp is currently being used
