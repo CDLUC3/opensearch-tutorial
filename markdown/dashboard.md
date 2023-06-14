@@ -1,3 +1,0 @@
-- Navigate to the [OpenSearch Dashboard Discover Page](http://{{MYHOSTNAME}}:8094/app/discover)
-  - Credentials: `admin:admin`
-  - If prompted, choose the "Global" tenant

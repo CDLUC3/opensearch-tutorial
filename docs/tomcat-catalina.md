@@ -23,13 +23,10 @@ echo "Open http://${MYHOSTNAME}:8086/docs/tomcat-catalina.md in your browser to 
 ## Explore the Dashboard
 
 
-{{dashboard}}
-- Add the following **Available Fields** to the display
-  - timestamp
-  - level
-  - thread
-  - class
-  - messageText
+- Navigate to the [OpenSearch Dashboard Discover Page](http://{{MYHOSTNAME}}:8094/app/discover?security_tenant=global#/?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-15m,to:now))&_a=(columns:!(level,thread,messageText),filters:!(),index:'ecs-*',interval:auto,query:(language:kuery,query:''),sort:!()))
+  - Credentials: `admin:admin`
+  - If prompted, choose the "Global" tenant
+  - Note that several selected fields have been added to the display
 
 ## Cleanup the Stack
 
@@ -40,4 +37,4 @@ docker-compose -f docker-compose.yml -f tomcat.yml down --volume
 ```
 
 ---
-[Access Logs from running tomcat](tomcat-access.md)
+[Back](alb_s3.md) | [Next](tomcat-access.md)

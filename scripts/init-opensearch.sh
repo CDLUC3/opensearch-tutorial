@@ -21,12 +21,27 @@ cat > /tmp/indexpattern.json << HERE
 }
 HERE
 
+status_code=0
 for tries in 1 2 3
 do
-  sleep 5
-  IPURL="$URL/api/saved_objects/index-pattern/ecs-*"
-  curl -H "osd-xsrf: true" -H "Content-Type: application/json" -H "securitytenant: Global" -d "@/tmp/indexpattern.json" $IPURL
+  if [ $status_code -eq 200 -o $status_code -eq 409 ]
+  then
+    echo
+    echo "Skippimg ${tries}: ${status_code}"
+  else
+    sleep 5
+    IPURL="$URL/api/saved_objects/index-pattern/ecs-*"
+    status_code=$(curl --write-out %{http_code} -H "osd-xsrf: true" -H "Content-Type: application/json" -H "securitytenant: Global" -d "@/tmp/indexpattern.json" --silent --output /tmp/log.txt --stderr /tmp/log.txt $IPURL)
 
-  echo
-  echo 'index pattern imported'
+    echo
+    echo
+    if [ $status_code -eq 200 ]
+    then
+      echo 'index pattern imported: ${status_code}'
+    else
+      echo "index pattern import failed (try ${tries}): ${status_code}"
+      echo
+      cat /tmp/log.txt
+    fi
+  fi
 done

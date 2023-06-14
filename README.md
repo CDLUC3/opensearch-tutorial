@@ -38,6 +38,7 @@ export MYHOSTNAME=$(hostname).$(domainname)
 - Start the docker stack
 - Explore the configuration files
 - Explore the open search dashboard to see the results
+  - For each example in this tutorial, a sample search was constructed from the opensearch dashboard screen and then _shared as a permalink_
 - Stop the docker stack
 - Continue to the next example
 

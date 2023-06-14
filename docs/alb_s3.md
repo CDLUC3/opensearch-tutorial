@@ -1,6 +1,6 @@
 {{home}}
 
-# Load Sample ALB log file from s3
+# Load Sample ALB log file from S3-compatible storage
 
 ## Purpose
 Load ALB logs from and S3-compatible cloud storage bucket.
@@ -26,11 +26,11 @@ echo "Open http://${MYHOSTNAME}:8086/docs/alb_s3.md in your browser to view thes
 ## Explore the Dashboard
 
 
-{{dashboard}}
-- Set the date range to go back to April 2023 to include all records parsed with their original timestamp.
-- Sample search
-  - `clientip: 10.10.11.218`
-  - Note that the logstash ingest timestamp is currently being used
+- Navigate to the [OpenSearch Dashboard Discover Page](http://{{MYHOSTNAME}}:8094/app/discover?security_tenant=global#/?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:'2023-04-01T22:13:27.160Z',to:now))&_a=(columns:!(elb,verb,path,params,response,tags),filters:!(),index:'ecs-*',interval:auto,query:(language:kuery,query:'NOT%20tags:%20_grokparsefailure'),sort:!()))
+  - Credentials: `admin:admin`
+  - If prompted, choose the "Global" tenant
+  - Note that the date has been set to roll back to April 2023
+  - Note the designated search and the selected desplay fields
 
 
 ## Cleanup the Stack
@@ -42,4 +42,4 @@ docker-compose -f docker-compose.yml -f alb-s3-json-log.yml down
 ```
 
 ---
-[Catalina Logs from running tomcat](tomcat-catalina.md)
+[Back](alb.md) | [Next](tomcat-catalina.md)

@@ -22,7 +22,6 @@ def get_map
   }
   [
     'start',
-    'dashboard',
     'home',
     'stop'
   ].each do |t|

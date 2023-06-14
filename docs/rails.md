@@ -26,12 +26,11 @@ echo "Open http://${MYHOSTNAME}:8086/docs/rails.md in your browser to view these
 
 ## Explore the Dashboard
 
-{{dashboard}}
+- Navigate to the [OpenSearch Dashboard Discover Page](http://{{MYHOSTNAME}}:8094/app/discover?security_tenant=global#/?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-15m,to:now))&_a=(columns:!(json_data.method,json_data.path,json_data.message,json_data.status,json_data.duration),filters:!(),index:'ecs-*',interval:auto,query:(language:kuery,query:''),sort:!()))
+  - Credentials: `admin:admin`
+  - If prompted, choose the "Global" tenant
+  - Note that several fields have been added to the display
 - [Browse rails](http://{{MYHOSTNAME}}:8080/)
-- Add the following **Available Fields** to the display
-  - json_data.method
-  - json_data.path
-  - json_data.status
 
 ## Cleanup the Stack
 
@@ -42,4 +41,4 @@ docker-compose -f docker-compose.yml -f rails.yml down --volume
 ```
 
 ---
-[Home](../README.md)
+[Back](tomcat-all-logs.md) | [Home](../README.md)

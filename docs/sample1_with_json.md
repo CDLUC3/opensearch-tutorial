@@ -23,14 +23,15 @@ echo "Open http://${MYHOSTNAME}:8086/docs/sample1_with_json.md in your browser t
 
 ## Explore the Dashboard
 
-{{dashboard}}
-- Sample search 
-  - Click `DQL` and update the data range to look at the past week
-- Search access logs
-  - Note that the logstash ingest timestamp is currently being used
+- Navigate to the [OpenSearch Dashboard Discover Page](http://{{MYHOSTNAME}}:8094/app/discover?security_tenant=global#/?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-15m,to:now))&_a=(columns:!(json_data.request,json_data.statusCode,tags),filters:!(),index:'ecs-*',interval:auto,query:(language:kuery,query:'json_data.statusCode:%20*'),sort:!()))
+  - Credentials: `admin:admin`
+  - If prompted, choose the "Global" tenant
+  - Note that the sample search is looking for records with a `json_data.statusCode`
+  - Note that 3 fields have been selected for default display
+  - Note that the logstash ingest timestamp is currently being used rather than the original timestamp from the log files
+- Other interesting Searches
   - `json_data.statusCode:200`
   - `json_data.statusCode:404`
-  - `json_data.statusCode:*`
   - `json_data.request:*/store/hostname*`
       - pulled from tomcat access log
 - Search custom metadata inserted with log4j2
@@ -46,4 +47,4 @@ docker-compose -f docker-compose.yml -f sample1-json-log.yml -f logstash-json-fi
 ```
 
 ---
-[Sample Files - Date Normalization](sample1_with_json_datenorm.md)
+[Back](sample1.md) | [Next](sample1_with_json_datenorm.md)

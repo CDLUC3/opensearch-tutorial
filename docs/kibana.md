@@ -17,8 +17,10 @@ echo "Open http://${MYHOSTNAME}:8086/" in your browser to view these instruction
 ```
 ## Explore the OpenSearch Dashboards
 
-{{dashboard}}
-- Click `Add Sample Data`
+- Navigate to the [OpenSearch Dashboard Discover Page](http://{{MYHOSTNAME}}:8094/app/discover)
+  - Credentials: `admin:admin`
+  - If prompted, choose the "Global" tenant
+  - Click `Add Sample Data`
   - Add each sample dataset one by one
   - Click `View Data` explore what a custom dashboard can do
 - From the main menu or from the dashboard page, click `Discover` to view the raw json entries
@@ -39,4 +41,4 @@ docker-compose down
 ```
 
 ---
-[Sample Files - No Json Filter](sample1.md)
+[Home](../README.md) | [Next](sample1.md)

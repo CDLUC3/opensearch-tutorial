@@ -21,13 +21,13 @@ echo "Open http://${MYHOSTNAME}:8086/docs/tomcat-access.md in your browser to vi
 ## Explore the Dashboard
 
 
-{{dashboard}}
+- Navigate to the [OpenSearch Dashboard Discover Page](http://{{MYHOSTNAME}}:8094/app/discover?security_tenant=global#/?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-15m,to:now))&_a=(columns:!(verb,request,response,received_bytes,serverip),filters:!(),index:'ecs-*',interval:auto,query:(language:kuery,query:''),sort:!()))
+  - Credentials: `admin:admin`
+  - If prompted, choose the "Global" tenant
+  - Note the pre-selected fields on the page
 - Navigate to the Tomcat Server
   - [static page: foo.txt](http://{{MYHOSTNAME}}:8080/static/foo.txt)
   - [hello.jsp](http://{{MYHOSTNAME}}:8080/hello.jsp)
-- Add the following **Available Fields** to the display
-  - path
-  - response
 
 ## Cleanup the Stack
 
@@ -38,4 +38,4 @@ docker-compose -f docker-compose.yml -f tomcat.yml -f tomcat-access.yml down --v
 ```
 
 ---
-[Json Application Logs from running tomcat](tomcat-app-logs.md)
+[Back](tomcat-catalina.md) | [Next](tomcat-app-logs.md)
