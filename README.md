@@ -22,6 +22,18 @@ These instructions presume that ports 8080-8099 are open to internet.
 
 - Ports 8086, 8094 and 8080 are used in these examples.
 
+### If running locally...
+
+```
+export MYHOSTNAME=$(hostname)
+```
+
+### If running on a server...
+
+```
+export MYHOSTNAME=$(hostname).$(domainname)
+```
+
 ## Run each example of interest
 - Start the docker stack
 - Explore the configuration files
