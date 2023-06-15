@@ -39,6 +39,7 @@ export MYHOSTNAME=$(hostname)
 export MYHOSTNAME=$(hostname).$(domainname)
 ```
 
+### Start the Tutorial
 ```
 docker-compose up -d --build
 echo "Open http://${MYHOSTNAME}:8086/" in your browser to view these instructions.
