@@ -12,7 +12,7 @@ Navigate the Examples that illustrate a full-featured custom dashboard configura
 
 ```
 docker-compose up -d --build
-echo "Open http://${MYHOSTNAME}:8086/" in your browser to view these instructions.
+echo "Open http://${MYHOSTNAME}:8086/docs/kibana.md" in your browser to view these instructions.
 
 ```
 ## Explore the OpenSearch Dashboards

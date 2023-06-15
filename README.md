@@ -11,7 +11,12 @@ _This other pages on this site are intended to be rendered in a docker container
 ## References
 - [Learning the Elastic Stack](https://www.linkedin.com/learning/learning-the-elastic-stack-2?u=76816210)
 - [Elastic Search in Depth](https://www.linkedin.com/learning/elasticsearch-in-depth?u=76816210)
-
+- [OpenSearch Docs](https://opensearch.org/docs/latest/)
+- [Logstash Documentation](https://www.elastic.co/guide/en/logstash/current/index.html)
+  - [Input Plugins](https://www.elastic.co/guide/en/logstash/current/input-plugins.html)
+  - [Filter Plugins](https://www.elastic.co/guide/en/logstash/current/filter-plugins.html)
+  - [Output Plugins](https://www.elastic.co/guide/en/logstash/current/output-plugins.html)
+  
 ## General Instructions
 
 Docker is required for this tutorial.  See our [docker tutorial](https://cdluc3.github.io/docker-tutorial/) for background.
@@ -32,6 +37,12 @@ export MYHOSTNAME=$(hostname)
 
 ```
 export MYHOSTNAME=$(hostname).$(domainname)
+```
+
+```
+docker-compose up -d --build
+echo "Open http://${MYHOSTNAME}:8086/" in your browser to view these instructions.
+
 ```
 
 ## Run each example of interest
@@ -60,3 +71,6 @@ export MYHOSTNAME=$(hostname).$(domainname)
 - Utilize opensearch index configuration to improve search results
 - Implement custom dashboard visualization
 - Created "saved reports" for particularly useful opensearch queries
+
+## Other useful notes
+- [Create OpenSearch Permalinks for Tutorial Pages](docs/permalink.md)
