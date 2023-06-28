@@ -1,0 +1,32 @@
+version: '3.9'
+volumes:
+  rails-logs:
+services:
+  rails:
+    image: my-docker-registry/rails:dev
+    container_name: rails
+    build:
+      context: rails
+      dockerfile: Dockerfile
+    environment:
+    - UMASK=0022
+    volumes:
+    - rails-logs:/usr/src/app/log/
+    ports:
+    - published: 8080
+      target: 3000
+  logstash:
+    volumes:
+    - rails-logs:/logfiles/
+    - "./logstash/logstash_rails.conf:/usr/share/logstash/pipeline/logstash.conf"
+    depends_on:
+    - rails
+  init:
+    entrypoint:
+    - /bin/sh
+    - '-c'
+    - |
+     /scripts/rails-requests.sh          
+     /scripts/init-opensearch.sh          
+    depends_on:
+    - rails
