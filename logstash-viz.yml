@@ -5,3 +5,6 @@ services:
     volumes:
     - "./logstash/logstash_viz.conf:/usr/share/logstash/pipeline/logstash.conf"
     - "/home/tbrady/mrt-cron/viz/billing.ndjson:/logfiles/billing.ndjson"
+  init:
+    volumes:
+    - "./ndjson-resources/billingviz.ndjson:/data/saved_objects.ndjson"
