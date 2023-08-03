@@ -5,3 +5,6 @@ services:
     volumes:
     - "./logstash/logstash_mimefile.conf:/usr/share/logstash/pipeline/logstash.conf"
     - "/home/tbrady/mrt-cron/coll-health/out:/logfiles/"
+  init:
+    volumes:
+    - "./ndjson-resources/invfiles_dashboards.ndjson:/data/saved_objects.ndjson"

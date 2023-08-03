@@ -68,6 +68,13 @@ echo "Open http://${MYHOSTNAME}:8086/" in your browser to view these instruction
 - [Handle 3 types of tomcat logs](docs/tomcat-all-logs.md)
 - [Rails logs](docs/rails.md)
 
+## UC3 specific Extensions
+_These examples are used internally by our development team.  The sample data is not available for this tutorial._
+- `docker-compose -f docker-compose.yml -f logstash-viz.yml up -d`
+  - https://github.com/CDLUC3/mrt-cron/blob/main/viz/README.md
+- `docker-compose -f docker-compose.yml -f logstash-mimefile.yml up -d`
+  - https://github.com/CDLUC3/mrt-cron/blob/main/coll-health/README.md
+
 ## Future demos to enable
 - Utilize opensearch index configuration to improve search results
 - Implement custom dashboard visualization
