@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  logstash:
+    volumes:
+    - "./logstash/logstash_mimefile.conf:/usr/share/logstash/pipeline/logstash.conf"
+    # - "/home/tbrady/mrt-cron/coll-health/files_details.ndjson:/logfiles/files_details.ndjson"
+    - "/home/tbrady/mrt-cron/coll-health/files_details.prod.ndjson:/logfiles/files_details.ndjson"
+  init:
+    volumes:
+    - "./ndjson-resources/invfiles_dashboards.ndjson:/data/saved_objects.ndjson"

@@ -4,4 +4,8 @@ services:
   logstash:
     volumes:
     - "./logstash/logstash_viz.conf:/usr/share/logstash/pipeline/logstash.conf"
-    - "/tmp/viz/:/logfiles/"
+    # - "/home/tbrady/mrt-cron/viz/billing.ndjson:/logfiles/billing.ndjson"
+    - "/home/tbrady/mrt-cron/viz/billing.prod.ndjson:/logfiles/billing.ndjson"
+  init:
+    volumes:
+    - "./ndjson-resources/billingviz.ndjson:/data/saved_objects.ndjson"
