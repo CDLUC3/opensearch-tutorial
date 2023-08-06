@@ -27,6 +27,29 @@ These instructions presume that ports 8080-8099 are open to internet.
 
 - Ports 8086, 8094 and 8080 are used in these examples.
 
+### Overview
+```mermaid
+  graph TD;
+      Tutorial[[Tutorial Files]]
+      Markdown(Markdown Renderer for Tutorial)
+      OpenSearch(OpenSearch Service)
+      Logstash(Logstash - upload log files to OpenSearch)
+      OpenSearchDashboards(OpenSearch Dashboards)
+      Init(Initialization Container)
+      Tutorial-->Markdown
+      Tutorial-->Logstash
+      Tutorial-->Init
+      Init-->OpenSearchDashboards
+      Logstash-->OpenSearch
+      OpenSearch<-->OpenSearchDashboards
+      Markdown-.->OpenSearchDashboards
+      Service(Tomcat or Rails)
+      Logfiles[[Application Log Files]]
+      Service-->Logfiles
+      Logfiles-->Logstash
+```
+
+
 ### If running locally...
 
 ```
