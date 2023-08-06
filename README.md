@@ -43,10 +43,16 @@ These instructions presume that ports 8080-8099 are open to internet.
       Logstash-->OpenSearch
       OpenSearch<-->OpenSearchDashboards
       Markdown-.->OpenSearchDashboards
-      Service(Tomcat or Rails)
-      Logfiles[[Application Log Files]]
-      Service-->Logfiles
+      subgraph OptionalServices
+        Tomcat(Tomcat)
+        Rails(Rails)
+        Minio(Minio - CloudStorage)
+        Logfiles[[Application Log Files]]
+      end
+      Tomcat-->Logfiles
+      Rails-->Logfiles
       Logfiles-->Logstash
+      Minio-->Logstash
 ```
 
 
