@@ -96,6 +96,7 @@ echo "Open http://${MYHOSTNAME}:8086/" in your browser to view these instruction
 - [Json Application Logs from running tomcat](docs/tomcat-app-logs.md)
 - [Handle 3 types of tomcat logs](docs/tomcat-all-logs.md)
 - [Rails logs](docs/rails.md)
+- [Sample Files - Update Json via document id](docs/sample3_with_json.md)
 
 ## UC3 specific Extensions
 
