@@ -37,7 +37,7 @@ echo "Open http://${MYHOSTNAME}:8086/docs/sample1.md in your browser to view the
 {{stop}}
 
 ```
-docker-compose -f docker-compose.yml -f sample1-json-log.yml down
+docker-compose -f docker-compose.yml -f sample1-json-log.yml down --volume
 ```
 
 ---

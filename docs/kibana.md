@@ -37,7 +37,7 @@ echo "Open http://${MYHOSTNAME}:8086/docs/kibana.md" in your browser to view the
 {{stop}}
 
 ```
-docker-compose down
+docker-compose down --volume
 ```
 
 ---

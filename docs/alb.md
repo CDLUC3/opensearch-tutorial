@@ -35,7 +35,7 @@ echo "Open http://${MYHOSTNAME}:8086/docs/alb.md in your browser to view these i
 {{stop}}
 
 ```
-docker-compose -f docker-compose.yml -f alb-json-log.yml down
+docker-compose -f docker-compose.yml -f alb-json-log.yml down --volume
 ```
 
 ---

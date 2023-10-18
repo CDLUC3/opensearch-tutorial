@@ -1,5 +1,6 @@
 version: '3.9'
-
+volumes:
+  opensearch:
 services:
   markdown:
     image: mymarkdown
@@ -34,6 +35,8 @@ services:
     ports:
     - published: 9200
       target: 9200
+    volumes:
+    - opensearch:/usr/share/opensearch/data
 
   opensearch-dashboards:
     image: opensearchproject/opensearch-dashboards

@@ -34,7 +34,7 @@ echo "Open http://${MYHOSTNAME}:8086/docs/sample1_with_json_datenorm.md in your 
 {{stop}}
 
 ```
-docker-compose -f docker-compose.yml -f sample1-json-log.yml -f logstash-json-filter-datenorm.yml down
+docker-compose -f docker-compose.yml -f sample1-json-log.yml -f logstash-json-filter-datenorm.yml down --volume
 ```
 
 ---
