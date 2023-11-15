@@ -1,0 +1,6 @@
+version: '3'
+
+services:
+  init:
+    volumes:
+    - "./ndjson-resources/objhealth.ndjson:/data/saved_objects.ndjson"

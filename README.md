@@ -107,6 +107,9 @@ _These examples load "saved objects" (searches, visualizations, dashboards) into
   - https://github.com/CDLUC3/mrt-cron/blob/main/viz/README.md
 - `docker-compose -f docker-compose.yml -f logstash-mimefile.yml up -d`
   - https://github.com/CDLUC3/mrt-cron/blob/main/coll-health/README.md
+- `docker-compose -f docker-compose.yml -f objhealth.yml up -d`
+  - https://github.com/CDLUC3/mrt-cron/blob/main/coll-health-obj-analysis/README.md
+
 
 ## Other useful notes
 - [Create OpenSearch Permalinks for Tutorial Pages](docs/permalink.md)
